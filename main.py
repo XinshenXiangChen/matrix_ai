@@ -14,9 +14,9 @@ width_height = 20
 goal_pos = [2, 19] 
 player_pos = [9, 1]
 
-mutation_rate = 0.1
+mutation_rate = 0.3
 population_size = 50
-max_moves = manhattan_dist(goal_pos, player_pos) + 2
+max_moves = manhattan_dist(goal_pos, player_pos)
 
 max_gen = 100
 
@@ -65,7 +65,22 @@ def main():
          child.mutate()
          population[i] = child
 
+
+
+      # print best ai from the generation
       top_ai_gen_pos = player_pos.copy()
+
+      print(f"""
+
+
+
+               NEW GENERATION {generation}
+
+
+
+            """)
+      time.sleep(2)
+      os.system("cls")
 
       for move in top_ai_gen.moves:
          for i in range(width_height):
@@ -79,7 +94,7 @@ def main():
                   print("*", end="")
             print("\n")
          
-         time.sleep(1)
+         time.sleep(0.5)
          os.system('cls')
          top_ai_gen_pos[0] += move.value[0]
          top_ai_gen_pos[1] += move.value[1]
@@ -87,6 +102,7 @@ def main():
       
       generation += 1
       if (top_fit_gen == 1):
+         print(generation)
          break
    # -------------------------
 

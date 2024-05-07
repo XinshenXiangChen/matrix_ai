@@ -1,0 +1,6 @@
+Key functions in Genetic Algorithms (not NEAT specific):
+
+ - fitness calculation function
+ - crossover (inherit genes from parents)
+ - mutation (in the nature of code example seciton 9.1 mutate function edits random letter given a global mutation rate function) 
+
